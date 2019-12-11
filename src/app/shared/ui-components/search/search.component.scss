@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.search {
+  &__input {
+    padding-left: 15px;
+  }
+}
+
+mat-form-field {
+  width: 50%;
+}
+
+::ng-deep {
+  mat-form-field .mat-form-field-flex {
+    background-color: #fff !important;
+    border-radius: 0 !important;
+    padding: 10px !important;
+  }
+
+  mat-form-field.mat-form-field-underline {
+    width: 0 !important;
+  }
+
+  .mat-form-field-prefix  {
+    top: .25em;
+  }
+
+  .mat-form-field-suffix  {
+    top: .25em;
+  }
+}

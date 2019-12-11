@@ -1,0 +1,10 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    background-color: #e4f0f1;
+    height: 100%;
+
+    &__image {
+        object-fit: contain;
+    }
+}

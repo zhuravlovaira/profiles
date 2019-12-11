@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+.header {
+    background-color: $header-background-color;
+    overflow: hidden;
+    padding: 5px 30px;
+    
+    &__title {
+        color: $header-color;
+        font-weight: normal;
+    }
+}

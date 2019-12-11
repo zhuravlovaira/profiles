@@ -1,0 +1,61 @@
+<mat-tab-group color="accent" animationDuration="0ms">
+  <mat-tab label="Profile Detail">
+    <mat-card class="profile-card">
+      <mat-card class="inner-profile-card">
+        <h2 class="inner-profile-card__title">Profile detail</h2>
+        <mat-card class="profile-detail__card">
+          <ul class="profile-detail__list">
+            <li class="profile-detail__row row">
+              <div class="row__title row__block">Prefix</div>
+              <div class="row__value row__block">{{profile.prefix}}</div>
+              <div class="row__icon row__block">
+                <mat-icon>create</mat-icon>
+              </div>
+            </li>
+            <li class="profile-detail__row row">
+              <div class="row__title row__block">First name</div>
+              <div class="row__value row__block">{{profile.first_name}}</div>
+              <div class="row__icon row__block">
+                <mat-icon>create</mat-icon>
+              </div>
+            </li>
+            <li class="profile-detail__row row">
+              <div class="row__title row__block">Last name</div>
+              <div class="row__value row__block">{{profile.last_name}}</div>
+              <div class="row__icon row__block">
+                <mat-icon>create</mat-icon>
+              </div>
+            </li>
+            <li class="profile-detail__row row">
+              <div class="row__title row__block">Local ID</div>
+              <div class="row__value row__block">{{profile.localid}}</div>
+              <div class="row__icon row__block">
+                <mat-icon>create</mat-icon>
+              </div>
+            </li>
+            <li class="profile-detail__row row">
+              <div class="row__title row__block">Phone</div>
+              <div class="row__value row__block">{{profile.phone}}</div>
+              <div class="row__icon row__block">
+                <mat-icon>create</mat-icon>
+              </div>
+            </li>
+            <li class="profile-detail__row row">
+                <div class="row__title row__block">Address</div>
+                <div class="row__value row__block">{{profile.address}}</div>
+                <div class="row__icon row__block">
+                  <mat-icon>create</mat-icon>
+                </div>
+              </li>
+          </ul>
+        </mat-card>
+      </mat-card>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Profile ID's">
+    <mat-card class="profile-card">Profile ID's</mat-card>
+  </mat-tab>
+  <mat-tab label="Activity Timeline">
+    <mat-card class="profile-card">Activity Timeline</mat-card>
+  </mat-tab>
+</mat-tab-group>

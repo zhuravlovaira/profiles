@@ -1,0 +1,83 @@
+<app-header>
+  <ng-container title>Profiles</ng-container>
+  <app-search content [control]="searchControl" (searchChange)="onSearchChange($event)"></app-search>
+</app-header>
+
+<div class="container mat-elevation-z8">
+  <div *ngIf="(total | async) && isDataReady" class="table-container">
+    <table mat-table [dataSource]="payload | async" class="table" matSort matSortDisableClear
+      (matSortChange)="onSortChange($event)">
+
+      <ng-container matColumnDef="photo">
+        <th mat-header-cell *matHeaderCellDef>
+          Photo
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <img [src]="row.photo" [alt]="row.name" class="image">
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="localid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+          Local ID
+        </th>
+        <td mat-cell *matCellDef="let row">{{row.localid}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+          Email Address
+        </th>
+        <td mat-cell *matCellDef="let row">{{row.email}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+          Name
+        </th>
+        <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+          phone number
+        </th>
+        <td mat-cell *matCellDef="let row">{{row.phone}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+          address
+        </th>
+        <td mat-cell *matCellDef="let row">{{row.address}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="modified">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
+          modified
+        </th>
+        <td mat-cell *matCellDef="let row">{{row.modified}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="view">
+        <th mat-header-cell *matHeaderCellDef>
+          View
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-button mat-icon-button aria-label="View" (click)="navigateToDetails(row.localid)">
+            <mat-icon>navigate_next</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="total | async" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]"
+      (page)="onPageChange($event)"></mat-paginator>
+  </div>
+
+  <div *ngIf="!(total | async) && isDataReady" class="no-profiles-text">
+    <p> No profiles found :(</p>
+  </div>
+</div>

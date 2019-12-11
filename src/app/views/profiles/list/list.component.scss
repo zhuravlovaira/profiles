@@ -1,0 +1,15 @@
+@import '../../../shared/styles/variables.scss';
+
+.container {
+  position: relative;
+  margin: 20px $default-sides-margin;
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+}
+
+.no-profiles-text {
+  padding: 10px;
+}

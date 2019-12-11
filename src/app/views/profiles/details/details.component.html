@@ -1,0 +1,11 @@
+<ng-container>
+  <app-profile-header [profile]="profile | async"></app-profile-header>
+  <div class="detail-wrapper">
+    <div class="quick-facts">
+      <app-quick-facts></app-quick-facts>
+    </div>
+    <div class="profile-detail">
+      <app-profile-detail [profile]="profile | async"></app-profile-detail>
+    </div>
+  </div>
+</ng-container>

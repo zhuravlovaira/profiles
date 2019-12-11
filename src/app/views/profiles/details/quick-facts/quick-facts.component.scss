@@ -1,0 +1,39 @@
+@import '../../../../shared/styles/variables.scss';
+
+.quick-facts {
+  margin-left: $default-sides-margin;
+
+  &__title {
+    font-weight: normal;
+  }
+}
+
+.fact {
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+
+  &__title-text {
+    font-weight: normal;
+    margin: 0;
+  }
+
+  &__info {
+    display: flex;
+    margin: 15px 0;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__profile-icon {
+    margin-right: 10px;
+  }
+}
